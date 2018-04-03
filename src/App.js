@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Route, Link } from 'react-router-dom';
+
 
 //Components
 import Home from './components/Home';
@@ -9,9 +11,16 @@ class App extends Component {
   render() {
     return (
       <div>
-        Hello
-        <Home />
-        <Profile />
+        <ul>
+          <li>
+            <Link to='/'>Home</Link>
+          </li>
+          <li>
+            <Link to='/profile'>Profile</Link>
+          </li>
+        </ul>
+        <Route path='/' exact component={Home} />
+        <Route path='/profile' exact component={Profile} />
       </div>
     );
   }
